@@ -1,0 +1,89 @@
+{% include'research_header.html' %}
+
+  <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/r1.jpg);">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                  
+                 
+
+
+<form method="post" enctype="multipart/form-data">
+		<center>
+		{% if data['dir'] %}
+		<br><br>
+							<h2 style="color: white">Update Materials Details</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>Materials</th>
+					<td><input type="text" name="mat" value="{{data['dir'][0]['materials']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Details</th>
+					<td><input type="text" name="det" value="{{data['dir'][0]['details']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+				</tr>
+			</table>
+					
+		{% else %}
+		<br><br>
+						<h2 style="color: white">Add Materials</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>Materials</th>
+					<td><input type="text" name="mat" pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Details</th>
+					<td><input type="text" name="det" class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="manage" value="ADD" class="btn btn-info"></td>
+				</tr>
+			</table>
+			{% endif %}			
+
+		 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->   
+
+			<br>
+			<center>
+			<h2>Materials</h2>
+			<table class="table" style="width: 800px">
+				<tr>
+					<th>Sl.no</th>
+					<th>Materials</th>
+					<th>Details</th>
+					<th>Status</th>
+				</tr>
+				{% for row in data['mat'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['materials']}}</td>
+					<td>{{row['details']}}</td>
+					<td>{{row['status']}}</td>
+					<td><a class="btn btn-info" href="?action=delete&id={{row['material_id']}}">Delete</a></td>
+					<td><a class="btn btn-success" href="?action=update&id={{row['material_id']}}">Update</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+
+  
+{% include'footer.html' %}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    tools:context=".Register">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:text="Register" />
+
+    <EditText
+        android:id="@+id/etfname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textPersonName"
+        android:hint="FirstName" />
+
+    <EditText
+        android:id="@+id/etlname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textPersonName"
+        android:hint="LastName" />
+
+
+    <EditText
+        android:id="@+id/etplace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textPersonName"
+        android:hint="Place" />
+
+    <EditText
+        android:id="@+id/etphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="phone"
+        android:hint="PhoneNo"/>
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textEmailAddress"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/etuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textPersonName"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/etpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="#fff"
+        android:inputType="textPassword"
+        android:hint="Password"/>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="REGISTER" />
+
+
+
+</LinearLayout>

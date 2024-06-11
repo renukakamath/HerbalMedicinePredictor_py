@@ -1,0 +1,125 @@
+{% include'doctor_header.html' %}
+
+ <div class="intro intro-carousel swiper position-relative">
+
+  <!--   <div class="swiper-wrapper"> -->
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/d3.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                  <form method="post" enctype="multipart/form-data">
+		<center>
+		{% if data['dir'] %}
+		<br><br>
+							<h2 style="color: white;font-size: 50px">Update Schedule</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>Date</th>
+					<td><input type="date" name="date" value="{{data['dir'][0]['date']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Time</th>
+					<td><input type="time" name="time" value="{{data['dir'][0]['time']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info"></td>
+				</tr>
+			</table>
+					
+		{% else %}
+		<br><br>
+						<h2 style="color: white;font-size: 50px">Add Schedule</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>Dtae</th>
+					<td><input type="date" name="date" pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Timke</th>
+					<td><input type="time" name="time" class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="manage" value="ADD" class="btn btn-info"></td>
+				</tr>
+			</table>
+			{% endif %}			
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!--   </div> -->
+   <!--  <div class="swiper-pagination"></div> -->
+  </div>  
+ 
+<!-- <form method="post" enctype="multipart/form-data">
+		<center>
+		{% if data['dir'] %}
+		<br><br>
+							<h2 style="color: black">Update Schedule</h2>
+			<table class="table" style="width: 600px;color: black">
+				<tr>
+					<th>Date</th>
+					<td><input type="date" name="date" value="{{data['dir'][0]['date']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Time</th>
+					<td><input type="time" name="time" value="{{data['dir'][0]['time']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+				</tr>
+			</table>
+					
+		{% else %}
+		<br><br>
+						<h2 style="color: black">Add Schedule</h2>
+			<table class="table" style="width: 600px;color: black">
+				<tr>
+					<th>Dtae</th>
+					<td><input type="date" name="date" pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Timke</th>
+					<td><input type="time" name="time" class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="manage" value="ADD" class="btn btn-info"></td>
+				</tr>
+			</table>
+			{% endif %}			
+ -->
+		
+			<br>
+			<center>
+			<h2>Schedule</h2>
+			<table class="table" style="width: 800px">
+				<tr>
+					<th>Sl.no</th>
+					<th>Date</th>
+					<th>Time</th>
+				</tr>
+				{% for row in data['sh'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['date']}}</td>
+					<td>{{row['time']}}</td>
+					<td><a href="?action=delete&id={{row['schedule_id']}}" class="btn btn-info">Delete</a></td>
+					<td><a href="?action=update&id={{row['schedule_id']}}" class="btn btn-info">Update</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+
+  
+{% include'footer.html' %}

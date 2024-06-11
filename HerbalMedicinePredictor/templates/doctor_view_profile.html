@@ -1,0 +1,82 @@
+{% include'doctor_header.html' %}
+ 
+  <div class="intro intro-carousel swiper position-relative">
+
+  <!--   <div class="swiper-wrapper"> -->
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/d1.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                  <center>
+  <h1 style="color: white;font-size: 50px">My Profile</h1>
+<form method="post">
+  <table class="table" style="width: 600px;color: white">
+        <tr>
+          <th>Doctor</th>
+          <td><input type="text" name="doc" value="{{data['dir'][0]['doctor']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+        </tr>
+        <tr>
+          <th>Place</th>
+          <td><input type="text" name="pl" value="{{data['dir'][0]['place']}}" required  class="form-control"></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><input type="text" name="ph" value="{{data['dir'][0]['phone']}}" required  class="form-control"></td>
+        </tr>
+          <tr>
+          <th>Email</th>
+          <td><input type="text" name="em" value="{{data['dir'][0]['email']}}" required  class="form-control"></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+        </tr>
+      </table>
+
+</center>
+
+  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!--   </div> -->
+   <!--  <div class="swiper-pagination"></div> -->
+  </div>  
+  
+<!-- <center>
+  <h1>My Profile</h1>
+<form method="post">
+  <table class="table" style="width: 600px;color: black">
+				<tr>
+					<th>Doctor</th>
+					<td><input type="text" name="doc" value="{{data['dir'][0]['doctor']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Place</th>
+					<td><input type="text" name="pl" value="{{data['dir'][0]['place']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td><input type="text" name="ph" value="{{data['dir'][0]['phone']}}" required  class="form-control"></td>
+				</tr>
+					<tr>
+					<th>Email</th>
+					<td><input type="text" name="em" value="{{data['dir'][0]['email']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+				</tr>
+			</table>
+
+</center>
+
+  </form> -->
+{% include'footer.html' %}

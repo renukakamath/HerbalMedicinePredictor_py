@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    tools:context=".Useraddproduct">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Buy Plant" />
+
+    <EditText
+        android:id="@+id/etplant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:hint="Quantity" />
+
+    <EditText
+        android:id="@+id/etquantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:hint="Quantity" />
+
+    <EditText
+        android:id="@+id/etrate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:hint="Rate" />
+
+    <EditText
+        android:id="@+id/etqunatityneed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:hint="Quantity Needed" />
+    <EditText
+        android:id="@+id/ettotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:hint="Total" />
+
+    <Button
+        android:id="@+id/btBuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Buy" />
+</LinearLayout>

@@ -1,0 +1,55 @@
+{% include 'admin_header.html' %}
+ <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 style="color: white;font-size: 70px">Herbal Medicine</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->
+  
+	<br>
+			<center>
+			<h2>Materials</h2>
+			<table class="table" style="width: 400px">
+				<tr>
+					<th>Sl.no</th>
+					<th>Researcher</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Materials</th>
+					<th>Details</th>
+					<th>Status</th>
+				</tr>
+				{% for row in data['mat'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td>{{row['materials']}}</td>
+					<td>{{row['details']}}</td>
+					{% if row['status']=='pending' %}
+					<td><a class="btn btn-info" href="?action=accept&id={{row['material_id']}}">Accept</a></td>
+					<td><a class="btn btn-success" href="?action=reject&id={{row['material_id']}}">Reject</a></td>
+					{% else %}
+					<td>{{row['status']}}</td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+{% include'footer.html' %}

@@ -1,0 +1,121 @@
+{% include'admin_header.html' %}
+        
+ <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg)">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                 
+                
+  
+<form method="post" enctype="multipart/form-data">
+		<center>
+		{% if data['dir'] %}
+		<br><br>
+							<h2 style="color: white">UPDATE Researcher Details</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>First Name</th>
+					<td><input type="text" name="fn" value="{{data['dir'][0]['first_name']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Last Name</th>
+					<td><input type="text" name="ln" value="{{data['dir'][0]['last_name']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Place</th>
+					<td><input type="text" name="pl" value="{{data['dir'][0]['place']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td><input type="text" name="ph" value="{{data['dir'][0]['phone']}}" required  class="form-control"></td>
+				</tr>
+					<tr>
+					<th>Email</th>
+					<td><input type="text" name="em" value="{{data['dir'][0]['email']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+				</tr>
+			</table>
+					
+		{% else %}
+		<br><br>
+						<h2 style="color: white">Add Researcher</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>First Name</th>
+					<td><input type="text" name="fn" pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Last Name</th>
+					<td><input type="text" name="ln" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Place</th>
+					<td><input type="text" name="pl" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td><input type="text" name="ph" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="text" name="em" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>User Name</th>
+					<td><input type="text" name="un" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="text" name="pass" class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="manage" value="ADD" class="btn btn-info"></td>
+				</tr>
+			</table>
+			{% endif %}			
+  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->
+		
+			<br>
+			<center>
+			<h2>Researcher</h2>
+			<table class="table" style="width: 800px">
+				<tr>
+					<th>Sl.no</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Place</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</tr>
+				{% for row in data['research'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}}</td>
+					<td>{{row['last_name']}}</td>
+					<td>{{row['place']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td><a class="btn btn-success" href="?action=delete&id={{row['login_id']}}">Delete</a></td>
+					<td><a class="btn btn-info" href="?action=update&id={{row['login_id']}}">Update</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+{% include'footer.html' %}

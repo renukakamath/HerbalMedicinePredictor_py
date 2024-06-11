@@ -1,0 +1,60 @@
+{% include 'research_header.html' %}
+
+ <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 style="color: white;font-size: 70px">Herbal Medicine</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->   
+
+<center>
+	<form method="post">
+		<h1>chat</h1>
+		<table class="table" style="width: 600px">
+			<tr>
+				<th>Message</th>
+				<td><input type="text" required="" class="form-control" name="msg">
+				<input type="submit" class="btn btn-info" value="SEND" name="send"></td>
+			</tr>
+		</table>
+	</form>
+</center>
+
+<center>
+			<br>
+			<h2>Message</h2>
+			<table class="table" style="width: 600px">
+				
+				{% for row in data['chat'] %}
+				<tr>
+				{% if row['sender_id'] == data['lid'] %}
+				<td><input  type="text" name=""   class="form-control"></td>
+					<td><input type="text" name=""   class="form-control" value="{{row['message']}}">
+					</td>
+				{% else %}
+				
+					<td><input type="text" name=""   value="{{row['message']}}"  class="form-control" >
+					</td>
+					<td><input  type="text"   class="form-control" name=""></td>
+				{% endif %}
+				</tr>
+				{% endfor %}
+			</table>
+
+	
+
+</center>
+{% include 'footer.html' %}

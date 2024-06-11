@@ -1,0 +1,47 @@
+{% include 'research_header.html' %}
+
+
+ <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 style="color: white;font-size: 70px">Herbal Medicine</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->   
+		<center>
+			<h2>Users</h2>
+			<table class="table" style="width: 800px">
+				<tr>
+					<th>Sl.no</th>
+					<th>User</th>
+					<th>Place</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</tr>
+				{% for row in data['user'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					<td>{{row['place']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td><a class="btn btn-info" href="researcher_chat_chatted_user?id={{row['login_id']}}">Chat</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+
+{% include 'footer.html' %}

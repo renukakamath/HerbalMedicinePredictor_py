@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.herbalmedicine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HerbalMedicine"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Useraddtocart"></activity>
+        <activity android:name=".Useraddproduct" />
+        <activity android:name=".ViewPurchase" />
+        <activity android:name=".ViewCart" />
+        <activity android:name=".ViewOrders" />
+        <activity android:name=".Ipsettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ViewBookings" />
+        <activity android:name=".Home" />
+        <activity android:name=".ChatHere" />
+        <activity android:name=".Login" />
+        <activity android:name=".Feedbacks" />
+        <activity android:name=".Register" />
+        <activity android:name=".ViewMedicine" />
+        <activity android:name=".Vieworserchdoctors" />
+        <activity android:name=".ViewCultivationTechnique" />
+        <activity android:name=".VieworsearchPlants" />
+        <activity android:name=".ViewResearch" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

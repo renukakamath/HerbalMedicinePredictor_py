@@ -1,0 +1,100 @@
+{% include'sales_header.html' %}
+ 
+  <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    
+                 
+  
+  <form method="post" enctype="multipart/form-data">
+		<center>
+		{% if data['dir'] %}
+		<br><br>
+							<h2 style="color: white">Update Medicine Details</h2>
+			<table class="table" style="width: 600px;color: white">
+				<tr>
+					<th>Medicine</th>
+					<td><input type="text" name="med" value="{{data['dir'][0]['medicine_name']}}" required pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Quantity</th>
+					<td><input type="text" name="qua" value="{{data['dir'][0]['quantity']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Amount</th>
+					<td><input type="text" name="amt" value="{{data['dir'][0]['amount']}}" required  class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-info btn-sm"></td>
+				</tr>
+			</table>
+					
+		{% else %}
+		<br><br>
+						<h2 style="color: white">Add Medicines</h2>
+			<table class="table" style="width: 600px;color: black">
+				<tr>
+					<th>Medicines</th>
+					<td><input type="text" name="med" pattern="[a-zA-Z\s]{0,30}" title="enter alphabets only" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Quantity</th>
+					<td><input type="text" name="qua" class="form-control"></td>
+				</tr>
+				<tr>
+					<th>Amount</th>
+					<td><input type="text" name="amt" class="form-control"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="manage" value="ADD" class="btn btn-info"></td>
+				</tr>
+			</table>
+			{% endif %}			
+
+	 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->   
+
+			<br>
+			<center>
+			<h2>Medicines</h2>
+			<table class="table" style="width: 800px">
+				<tr>
+					<th>Sl.no</th>
+					<th>Medicines</th>
+					<th>Quantity</th>
+					<th>Amount</th>
+					<th>Date</th>
+				</tr>
+				{% for row in data['med'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['medicine_name']}}</td>
+					<td>{{row['quantity']}}</td>
+					<td>{{row['amount']}}</td>
+					<td>{{row['date']}}</td>
+					<td><a class="btn btn-success" href="?action=delete&id={{row['medicine_id']}}">Delete</a></td>
+					<td><a class="btn btn-info" href="?action=update&id={{row['medicine_id']}}">Update</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+
+</center>
+
+  
+{% include'footer.html' %}

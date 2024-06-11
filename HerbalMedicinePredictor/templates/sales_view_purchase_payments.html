@@ -1,0 +1,47 @@
+{% include'sales_header.html' %}
+ 
+   <!-- ======= Intro Section ======= -->
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/slide-1.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <h1 style="color: white;font-size: 70px">Herbal Medicine</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div><!-- End Intro Section -->  
+  
+<center>
+ 
+	<br>
+			<center>
+			<h2>Payments</h2>
+			<table class="table" style="width: 400px">
+				<tr>
+					<th>Sl.no</th>
+					<th>Amount</th>
+					<th>Date</th>
+				</tr>
+				{% for row in data['pay'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['amount']}}</td>
+					<td>{{row['date']}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+
+  
+{% include'footer.html' %}

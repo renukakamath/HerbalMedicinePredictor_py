@@ -1,0 +1,59 @@
+{% include'doctor_header.html' %}
+ 
+  <div class="intro intro-carousel swiper position-relative" style="height: 500px">
+
+  <!--   <div class="swiper-wrapper"> -->
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(/static/assets/img/d2.jpg);height: 500px">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                  <form>
+ 					 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!--   </div> -->
+   <!--  <div class="swiper-pagination"></div> -->
+  </div>  
+  
+	<br>
+			<center>
+			<h2 style="color: black;font-size: 50px">Orders</h2>
+			<table class="table" style="width: 700px;color: black">
+				<tr>
+					<th>Sl.no</th>
+					<th>User</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+				{% for row in data['book'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					<td>{{row['date']}}</td>
+					{% if row['status']=='pending' %}
+					<td><a class="btn btn-success" href="?action=accept&id={{row['booking_id']}}">Accept</a></td>
+					<td><a class="btn btn-info" href="?action=reject&id={{row['booking_id']}}">Reject</a></td>
+					{% else %}
+					<td>{{row['status']}}</td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</table>
+
+		</center>
+	</form>
+  
+{% include'footer.html' %}
